@@ -5,11 +5,12 @@ using System;
 using Unity.Mathematics;
 using System.Runtime.InteropServices;
 using UnityEngine.UI;
+using TMPro;
 
 public class spaceShipController : MonoBehaviour
 {
     private Rigidbody rb;
-    public Button launchButton;
+    public Button launchButton, exploreButton;
     public FixedJoystick joystick;
     public float force = 10, rotateForce;
     private Vector3 direction, rotation;
@@ -19,6 +20,10 @@ public class spaceShipController : MonoBehaviour
     public ParticleSystem fire3;
     public bool isTestingMobile = true;
     public float launchButtonPressed;
+
+
+    public TMP_Text tutorialText;
+    public Canvas rocketSelfCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +34,15 @@ public class spaceShipController : MonoBehaviour
         {
             joystick.gameObject.SetActive(Application.isMobilePlatform || isTestingMobile);
             launchButton.gameObject.SetActive(Application.isMobilePlatform || isTestingMobile);
+            exploreButton.gameObject.SetActive(Application.isMobilePlatform || isTestingMobile);
+            tutorialText.text = " Use the controls to move around";
         }
         else
         {
             joystick.gameObject.SetActive(Application.isMobilePlatform || isTestingMobile);
             launchButton.gameObject.SetActive(Application.isMobilePlatform || isTestingMobile);
+            exploreButton.gameObject.SetActive(Application.isMobilePlatform || isTestingMobile);
+            tutorialText.text = " Use WASD and Space to move around";
         }
     }
 
@@ -63,6 +72,7 @@ public class spaceShipController : MonoBehaviour
         if (up == 1)
         {
             fire3.Play();
+            rocketSelfCanvas.gameObject.SetActive(false);
         }
         else
         {

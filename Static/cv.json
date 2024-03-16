@@ -1,0 +1,190 @@
+{
+    "myself": {
+        "Title": "About myself",
+        "Name": "Dương Minh Hoàng",
+        "Job": "Student at FPT university",
+        "Objective": "To be an experienced coder and programmer who develops and integrate AI and machine learning in video games",
+        "Email": "hoangdgminh@gmail.com",
+        "Facebook": {
+            "Link": "https://www.facebook.com/hoang.duongminh.33865/"
+        },
+        "Linkedin": {
+            "Link": "https://www.linkedin.com/in/d%C6%B0%C6%A1ng-minh-ho%C3%A0ng-65b257269/"
+        },
+        "Address": "Lane 193 Trung Kinh, Yen Hoa, Cau Giay, Hanoi, Vietnam",
+        "Phone": "0934686923",
+        "DoB": "18/11/2003",
+        "Nationality": "Vietnam",
+        "Github": {
+            "Link": "https://github.com/htglvl"
+        }
+    },
+    "experience": [
+        {
+            "Place": "Viettel",
+            "Website": {
+                "Link": "https://viettelhightech.vn/"
+            },
+            "Address": "Hoa Lac, Hanoi",
+            "Job": "Algorithm research engineer intern",
+            "Time": {
+                "from": "20/7/2023",
+                "to": "31/12/2023"
+            },
+            "Description": [
+                "Research about ballistic trajectory, the factor affecting the trajectory and how to visualize it",
+                "Learn about radar and how it works"
+            ],
+            "Works": [
+                "Understand the basic of radar",
+                "Research 3 Forces and 3 Moments affecting ballistic and calculate the 6 coefficients of each force and moments of bullet using Ansys",
+                "Visualize the trajectory of ballistic, how it perform under 20 scenarios using Unity, help the team to understand abstract ideas about the algorithm"
+            ]
+        },
+        {
+            "Place": "Kaeru",
+            "Website": {
+                "Link": "https://www.instagram.com/the.kaeru.official/?next=%2F"
+            },
+            "Address": "the.kaeru.official",
+            "Job": "Photo Editor",
+            "Time": {
+                "from": "20/6/2021",
+                "to": "31/2/2024"
+            },
+            "Description": [
+                "Edit photo to the right concept and theme"
+            ],
+            "Works": [
+                "Using Photoshop and Canva to Edit raw photo to different posts",
+                "Meet the deadline of 2 posts per week"
+            ]
+        },
+        {
+            "Place": "My home",
+            "Website": {},
+            "Address": "Trung Kinh, Yen Hoa, Cau Giay, Hanoi",
+            "Job": "Indie game Developer",
+            "Time": {
+                "from": "15/4/2018",
+                "to": "10/6/2021"
+            },
+            "Description": [
+                "Develop games"
+            ],
+            "Works": [
+                "Do everything from visualizing ideas to polishing build"
+            ]
+        }
+    ],
+    "projectsAndCompetitions": [
+        {
+            "Name": "Junction X Hanoi Hackathon 2023",
+            "Time": {
+                "from": "14/4/2023",
+                "to": "16/4/2023"
+            },
+            "Works": [
+                "Used various computer vision skills to complete the contest to solve overlapping area problems",
+                "Applied OpenCV and tried multiple state of the art image stitching model and object detection model to solve problems"
+            ]
+        },
+        {
+            "Name": "Mlops marathon 2023",
+            "Time": {
+                "from": "1/6/2023",
+                "to": "1/7/2023"
+            },
+            "Works": [
+                "Used and learn new applications and frameworks on the fly with the marathon",
+                "Have some experience with Mlops and AI related applications and frameworks"
+            ]
+        },
+        {
+            "Name": "TransFlow",
+            "Time": {
+                "from": "1/1/2024",
+                "to": "1/7/2024"
+            },
+            "Works": [
+                "Develop a automated manga translation app",
+                "Learn about Website, how to develope a website",
+                "Try to apply multiple neural machine translation and AI image captioning to project"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "Place": "FPT",
+            "Website": {
+                "Link": "https://hanoi.fpt.edu.vn/"
+            },
+            "Address": "Hoa Lac, Hanoi",
+            "Job": "Student at FPT University",
+            "Time": {
+                "from": "2021",
+                "to": "2024"
+            },
+            "GPA": "8.5"
+        }
+    ],
+    "skills": {
+        "Primary": [
+            "C# and python coding skill",
+            "Experience with popular AI frameworks included scikit-learn, opencv, tensorflow, pandas, numpy, seaborn, …",
+            "Familiar with Matlab and Ansys",
+            "2 years experience with Unity game engine",
+            "Familiar with various Mlops applications included MLflows, Airflow, Docker, Feast, Github"
+        ],
+        "Other": [
+            "Experienced with Photoshop and Canva"
+        ]
+    },
+    "languages": [
+        {
+            "Language": "Vietnamese",
+            "Level": "Native"
+        },
+        {
+            "Language": "English",
+            "Level": "7.5 IELTS"
+        },
+        {
+            "Language": "Japanese",
+            "Level": "N4"
+        }
+    ],
+    "certificationsAndCourses": {
+        "title": "Certifications and Courses",
+        "cert": [
+            {
+                "title": "AI for Scientific Research",
+                "Link": "https://drive.google.com/file/d/1vFJAeuIWCHjxnbvTn6-f9PZHx7TqqbZZ/view?usp=drive_link"
+            },
+            {
+                "title": "Ethics in the Age of AI",
+                "Link": "https://drive.google.com/file/d/1Qr0B2LyMebR0fBX6MLxiGT834bpkC5tk/view?usp=drive_link"
+            },
+            {
+                "title": "Deep Learning",
+                "Link": "https://drive.google.com/file/d/1SDHR5bIxG5_32RzbkzSZdhmQdw0oAHG3/view?usp=drive_link"
+            },
+            {
+                "title": "IBM Full Stack Software Developer",
+                "Link": "https://drive.google.com/file/d/1NnzwREyHGlJpKW-7xSKavnespWRV1wvh/view?usp=drive_link"
+            },
+            {
+                "title": "Natural Language Processing",
+                "Link": "https://drive.google.com/file/d/1MdGqnvCorfbjIp80NTAC8zHtGsOgWq-7/view?usp=drive_link"
+            },
+            {
+                "title": "Software Development Lifecycle",
+                "Link": "https://drive.google.com/file/d/1MdDZ427fKRfNHYLFq197K5rVXOml9M9H/view?usp=drive_link"
+            },
+            {
+                "title": "More",
+                "Link": "https://drive.google.com/drive/folders/1Fok02ChjbiqTwIFlFIsnnb7ZEfGcEsTz?usp=sharing"
+            }
+        ]
+    }
+}

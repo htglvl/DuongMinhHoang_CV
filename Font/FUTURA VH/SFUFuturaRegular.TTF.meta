@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: b64b01c43606386488aebb2665bbeb88
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - SFU Futura
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 847b2e1238c9d2c46bd1aee287172ec3, type: 3}
+  - {fileID: 12800000, guid: 114caa0994b3d6040b74037ce6f8c6b5, type: 3}
+  - {fileID: 12800000, guid: 240075ccfa1b66b4d9e26af2d2008e27, type: 3}
+  - {fileID: 12800000, guid: 44688c55cacaf924e8c21f07414edf54, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

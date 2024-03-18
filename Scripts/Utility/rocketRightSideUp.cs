@@ -12,6 +12,8 @@ public class rocketRightSideUp : MonoBehaviour
     [HideInInspector]
     public Transform planetPos;
     public bool inParent = false;
+    public AudioSource rocketThrust, impact;
+    public ParticleSystem impactParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,8 +52,12 @@ public class rocketRightSideUp : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        impactParticle.transform.position = transform.position;
+        impactParticle.Play();
+        impact.Play();
         //Check for a match with the specified name on any GameObject that collides with your GameObject
         planetPos = collision.gameObject.transform;
+        
     }
     private void OnCollisionStay(Collision collision)
     {

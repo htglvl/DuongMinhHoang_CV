@@ -32,4 +32,7 @@ public class linkEmbed : MonoBehaviour
     public void FPT(){
         Application.OpenURL(classToText.cv.education[0].Website.Link);
     }
+    public void Kaeru(){
+        Application.OpenURL(classToText.cv.experience[1].Website.Link);
+    }
 }

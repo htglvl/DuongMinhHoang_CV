@@ -45,7 +45,7 @@ public class gravitySimulation : MonoBehaviour
         float distance = difference.magnitude;
         float forceMagnitude = (massProduct * gcons)/Mathf.Pow(distance,distPower);
         Vector3 forceDirection = difference.normalized;
-        attractee.AddForce(forceDirection*forceMagnitude);
+        attractee.AddForce(forceDirection*forceMagnitude, ForceMode.Acceleration);
 
     }
 }

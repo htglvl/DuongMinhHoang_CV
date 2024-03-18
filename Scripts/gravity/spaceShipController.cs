@@ -20,6 +20,7 @@ public class spaceShipController : MonoBehaviour
     public ParticleSystem fire3;
     public bool isTestingMobile = true;
     public float launchButtonPressed;
+    public AudioSource rocketThrust;
 
 
     public TMP_Text tutorialText;
@@ -72,10 +73,20 @@ public class spaceShipController : MonoBehaviour
         {
             fire3.Play();
             rocketSelfCanvas.gameObject.SetActive(false);
+            rocketThrust.volume = 1;
+            if (!rocketThrust.isPlaying)
+            {
+                rocketThrust.Play();
+            }
+            Debug.Log("playing");
         }
         else
         {
             fire3.Stop();
+            if (rocketThrust.isPlaying)
+            {
+                rocketThrust.volume = 0.5f;
+            }
         }
         direction = (transform.up * up).normalized;
         rotation = (-transform.forward * turnForward +

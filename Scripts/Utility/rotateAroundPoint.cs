@@ -7,6 +7,8 @@ using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+
+
 public class rotateAroundPoint : MonoBehaviour
 {
     [SerializeField] private Camera cam;
@@ -25,8 +27,7 @@ public class rotateAroundPoint : MonoBehaviour
     private float cameraRange = 120, addedRange = 0, zoom, exploredZoom;
     private bool touchRotateDown, touchRotate, zooming = false;
     public float varianceInDistances = 5.0f, minPinchSpeed = 5.0f, mobileAddedRange = 2f;
-    private Vector3 smoothVelocity;
-    private float smoothRange;
+    private bool isTouchingJoystick;
 
     // public TMP_Text pointerText, mouseButtonText, mousebuttonDownText;
 
@@ -64,7 +65,8 @@ public class rotateAroundPoint : MonoBehaviour
         // mouseButtonText.text = "mouse button " + Input.GetMouseButton(0).ToString();
         // mousebuttonDownText.text = "mouse button down " + Input.GetMouseButtonDown(0).ToString();
         // Debug.Log(Input.GetMouseButtonDown(0));
-        if (Input.touchCount == 1 && !EventSystem.current.IsPointerOverGameObject() && !zooming)
+        /*!EventSystem.current.IsPointerOverGameObject() &&*/
+        if (Input.touchCount == 1 && !spaceShipController.joystick.FingerIsDown && !zooming)
         {
             touchRotateDown = Touch.activeFingers[0].currentTouch.began;
             touchRotate = Touch.activeFingers[0].currentTouch.inProgress;
@@ -103,9 +105,9 @@ public class rotateAroundPoint : MonoBehaviour
         if (rocketRightSideUp.inParent == false) //in outer space
         {
             spaceShipController.exploreButton.gameObject.SetActive(false);
-            privateTarget = Vector3.SmoothDamp(privateTarget, target.position,ref smoothVelocity , Time.deltaTime * toPlanetTimeSpeed);
-            cameraRange = Mathf.SmoothDamp(cameraRange, range, ref smoothRange, Time.deltaTime * toPlanetTimeSpeed);
-            Offset = Vector3.Lerp(Offset, Vector3.zero, Time.deltaTime * toPlanetTimeSpeed);
+            privateTarget = Vector3.Slerp(privateTarget, target.position, toPlanetTimeSpeed);
+            cameraRange = Mathf.LerpAngle(cameraRange, range, toPlanetTimeSpeed);
+            Offset = Vector3.Slerp(Offset, Vector3.zero, toPlanetTimeSpeed * Time.smoothDeltaTime);
         }
         else //stay in some planet
         {
@@ -113,14 +115,14 @@ public class rotateAroundPoint : MonoBehaviour
             if (explored)
             {
                 // Offset = planetOffset;
-                Offset = Vector3.Lerp(Offset, planetOffset, Time.deltaTime * toPlanetTimeSpeed);
+                Offset = Vector3.Slerp(Offset, planetOffset, Time.deltaTime * toPlanetTimeSpeed);
                 cameraRange = Mathf.Lerp(cameraRange, planetRange * rocketRightSideUp.planetPos.localScale.x * exploredZoom * mobileAddedRange, Time.deltaTime * toPlanetTimeSpeed);
             }
             else
             {
-                privateTarget = Vector3.Lerp(privateTarget, rocketRightSideUp.planetPos.position, Time.deltaTime * toPlanetTimeSpeed);
+                privateTarget = Vector3.Slerp(privateTarget, rocketRightSideUp.planetPos.position, Time.deltaTime * toPlanetTimeSpeed);
                 cameraRange = Mathf.Lerp(cameraRange, planetRange * rocketRightSideUp.planetPos.localScale.x * mobileAddedRange, Time.deltaTime * toPlanetTimeSpeed);
-                Offset = Vector3.Lerp(Offset, Vector3.zero, Time.deltaTime * toPlanetTimeSpeed);
+                Offset = Vector3.Slerp(Offset, Vector3.zero, Time.smoothDeltaTime * toPlanetTimeSpeed);
             }
         }
         if (RocketRB.velocity.magnitude < 0.3)
@@ -147,10 +149,10 @@ public class rotateAroundPoint : MonoBehaviour
         }
         else
         {
-            privateTarget = Vector3.Lerp(privateTarget, ThirdPersonCam.position, Time.deltaTime * toPlanetTimeSpeed);
-            cameraRange = Mathf.Lerp(cameraRange, 0, Time.deltaTime * toPlanetTimeSpeed * 2);
+            privateTarget = Vector3.Slerp(privateTarget, ThirdPersonCam.position, Time.smoothDeltaTime * toPlanetTimeSpeed);
+            cameraRange = Mathf.LerpAngle(cameraRange, 0, Time.deltaTime * toPlanetTimeSpeed * 2);
             //transform.position = Vector3.Lerp(cam.transform.position, ThirdPersonCam.position, Time.deltaTime * to3rdCamSpeed);
-            transform.rotation = Quaternion.Lerp(transform.rotation, ThirdPersonCam.rotation, Time.deltaTime * to3rdCamSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, ThirdPersonCam.rotation, Time.smoothDeltaTime * to3rdCamSpeed);
         }
         cam.transform.position = privateTarget;
         cam.transform.Translate(new Vector3(0, 0, -cameraRange - addedRange));

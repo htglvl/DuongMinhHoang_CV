@@ -11,7 +11,7 @@
         "Linkedin": {
             "Link": "https://www.linkedin.com/in/d%C6%B0%C6%A1ng-minh-ho%C3%A0ng-65b257269/"
         },
-        "Address": "Lane 193 Trung Kinh, Yen Hoa, Cau Giay, Hanoi, Vietnam",
+        "Address": "Cau Giay, Hanoi, Vietnam",
         "Phone": "0934686923",
         "DoB": "18/11/2003",
         "Nationality": "Vietnam",
@@ -70,10 +70,12 @@
                 "to": "10/6/2021"
             },
             "Description": [
-                "Develop games"
+                "Develop games",
+                "Proficient with Unity and game development workflow"
             ],
             "Works": [
-                "Do everything from visualizing ideas to polishing build"
+                "Do everything from visualizing ideas to polishing build",
+                "Develop 3 games, 2 got local awards"
             ]
         }
     ],

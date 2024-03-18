@@ -25,6 +25,8 @@ public class rotateAroundPoint : MonoBehaviour
     private float cameraRange = 120, addedRange = 0, zoom, exploredZoom;
     private bool touchRotateDown, touchRotate, zooming = false;
     public float varianceInDistances = 5.0f, minPinchSpeed = 5.0f, mobileAddedRange = 2f;
+    private Vector3 smoothVelocity;
+    private float smoothRange;
 
     // public TMP_Text pointerText, mouseButtonText, mousebuttonDownText;
 
@@ -101,8 +103,8 @@ public class rotateAroundPoint : MonoBehaviour
         if (rocketRightSideUp.inParent == false) //in outer space
         {
             spaceShipController.exploreButton.gameObject.SetActive(false);
-            privateTarget = Vector3.Lerp(privateTarget, target.position, Time.deltaTime * toPlanetTimeSpeed);
-            cameraRange = Mathf.Lerp(cameraRange, range, Time.deltaTime * toPlanetTimeSpeed);
+            privateTarget = Vector3.SmoothDamp(privateTarget, target.position,ref smoothVelocity , Time.deltaTime * toPlanetTimeSpeed);
+            cameraRange = Mathf.SmoothDamp(cameraRange, range, ref smoothRange, Time.deltaTime * toPlanetTimeSpeed);
             Offset = Vector3.Lerp(Offset, Vector3.zero, Time.deltaTime * toPlanetTimeSpeed);
         }
         else //stay in some planet

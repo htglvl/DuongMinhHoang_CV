@@ -27,7 +27,6 @@ public class spaceShipController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(Application.isMobilePlatform);
         rb = GetComponent<Rigidbody>();
         fire3.Stop();
         if (Application.isMobilePlatform || isTestingMobile)

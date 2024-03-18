@@ -34,6 +34,7 @@ public class rocketRightSideUp : MonoBehaviour
         if (privateTimerResetCount >= timerTillReset)
         {
             privateTimerResetCount = 0;
+            Debug.Log("reset");
             Reset();
         }
     }
@@ -41,7 +42,10 @@ public class rocketRightSideUp : MonoBehaviour
     private void Reset()
     {
         Vector3 upVector = transform.position - planetPos.position;
-        rb.AddTorque(Vector3.Cross(upVector, transform.TransformDirection(Vector3.up)) * -resetForce, ForceMode.Impulse);
+        Debug.Log(planetPos.gameObject.name);
+        rb.AddTorque(Vector3.Cross(upVector, transform.TransformDirection(Vector3.up)) * resetForce, ForceMode.Force);
+        rb.AddForce(upVector * resetForce);
+        rb.AddExplosionForce(resetForce, transform.position, 1f);
     }
 
     void OnCollisionEnter(Collision collision)
